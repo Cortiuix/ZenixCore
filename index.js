@@ -2,12 +2,25 @@ const Discord = require("discord.js")
 
 const client = new Discord.Client({ intents: [32511] })
 
+require("./mongodb")
+
+const CurrencySystem = require("currency-system");
+const cs = new CurrencySystem;
+
+cs.setMongoURL("mongodb+srv://pansinbot:h4HyOEvkzvsGIV9M@cluster0.s6bey.mongodb.net/?retryWrites=true&w=majority");
+
 client.on('ready', () => {
     console.log("Tamo activo")
 })
 
 
 client.commands = new Discord.Collection()
+let carpetas = fs.readdirSync('./comandos/').map((subCarpetas) => {
+    const archivos = fs.readdirSync(`./comandos/${subCarpetas}`).map((comandos) => {
+      let comando = require(`./comandos/${subCarpetas}/${comandos}`)
+      client.commands.set(comando.name, comando)
+    })
+  })
 
 client.on('message', (message) => {
 
