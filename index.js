@@ -6,6 +6,9 @@ client.on('ready', () => {
     console.log("Tamo activo")
 })
 
+
+client.commands = new Discord.Collection()
+
 client.on('message', (message) => {
 
     let prefix = 'p!'
