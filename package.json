@@ -16,6 +16,7 @@
   "dependencies": {
     "currency-system": "^2.6.53",
     "discord.js": "^13.8.1",
-    "mongoose": "^6.4.4"
+    "mongoose": "^6.4.4",
+    "moongose": "^1.0.0"
   }
 }
