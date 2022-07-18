@@ -2,6 +2,9 @@ const Discord = require("discord.js")
 
 const client = new Discord.Client({ intents: [32511] })
 
+const fs = require('fs');
+let { readdirSync } = require('fs');
+
 require("./mongodb")
 
 const CurrencySystem = require("currency-system");
