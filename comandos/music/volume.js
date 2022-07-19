@@ -20,8 +20,8 @@ module.exports = {
     const queue = client.distube.getQueue(int.member.voice.channel)
     if(!queue) return int.reply({ content: 'There are no songs playing.', ephemeral: true })
 
-    if(porcentaje > '1') return int.reply({ content: 'The value has to be greater than 1.', ephemeral: true })
-    if(porcentaje < '100') return int.reply({ content: 'The value has to be less than 100.', ephemeral: true })
+    if(porcentaje < '1') return int.reply({ content: 'The value has to be greater than 1.', ephemeral: true })
+    if(porcentaje > '100') return int.reply({ content: 'The value has to be less than 100.', ephemeral: true })
 
   try {
       client.distube.setVolume(int.member.voice.channel, porcentaje)
