@@ -76,14 +76,6 @@ client.on('message', (message) => {
 
 })
 
-for(const file of fs.readdirSync('./distube/')){
-  if(file.endsWith('.js')){
-    let fileName = file.substring(0, file.length - 3)
-    let fileContents = require(`./distube/${file}`)
-    client.distube.on(fileName, fileContents.bind(null, client))
-  }
-}
-
 const { SpotifyPlugin } = require("@distube/spotify");
 const { YtDlpPlugin } = require('@distube/yt-dlp');
 new SpotifyPlugin({
@@ -108,5 +100,13 @@ client.distube = new DisTube(client, {
   ],
   youtubeDL: false
 })
+
+for(const file of fs.readdirSync('./distube/')){
+  if(file.endsWith('.js')){
+    let fileName = file.substring(0, file.length - 3)
+    let fileContents = require(`./distube/${file}`)
+    client.distube.on(fileName, fileContents.bind(null, client))
+  }
+}
 
 client.login("Nzc4Njg0MjE4OTM4MDk3NzA0.GilwJZ.B-WW0_7VCd-FPbZNj1zkliVqnq1it9aMLyIKuE")
