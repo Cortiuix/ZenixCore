@@ -1,6 +1,7 @@
 const Discord = require("discord.js")
 
 const client = new Discord.Client({ intents: [32511] })
+const DisTube = require("distube").default
 
 const fs = require('fs');
 let { readdirSync } = require('fs');
@@ -13,6 +14,30 @@ const cs = new CurrencySystem;
 cs.setMongoURL("mongodb+srv://pansinbot:h4HyOEvkzvsGIV9M@cluster0.s6bey.mongodb.net/?retryWrites=true&w=majority");
 
 client.on('ready', () => {
+
+  const estados = [
+    {
+        name: `users & servers`,
+        type: 'WATCHING'
+    },
+    {
+        name: 'Pansin beta',
+        type: 'PLAYING'
+    }
+]
+
+const aleatorio = estados[Math.floor(Math.random() * estados.length)]
+
+setInterval(() => {
+    function presence() {
+        client.user.setPresence({
+            activities: [aleatorio],
+            status: 'idle'
+        })
+    }
+    presence()
+}, 10000)
+
     console.log("Tamo activo")
 })
 
@@ -49,6 +74,39 @@ client.on('message', (message) => {
 
     }
 
+})
+
+for(const file of fs.readdirSync('./distube/')){
+  if(file.endsWith('.js')){
+    let fileName = file.substring(0, file.length - 3)
+    let fileContents = require(`./distube/${file}`)
+    client.distube.on(fileName, fileContents.bind(null, client))
+  }
+}
+
+const { SpotifyPlugin } = require("@distube/spotify");
+const { YtDlpPlugin } = require('@distube/yt-dlp');
+new SpotifyPlugin({
+  parallel: true,
+  emitEventsAfterFetching: false,
+  api: {
+    clientId: "bf0e91b32e594e81b0cd07b40a3764d5",
+    clientSecret: "d3bb75b47a344d09920aee259d781bcd",
+  },
+});
+
+client.distube = new DisTube(client, {
+  leaveOnStop: false,
+  emitNewSongOnly: true,
+  emitAddSongWhenCreatingQueue: false,
+  emitAddListWhenCreatingQueue: false,
+  plugins: [
+    new SpotifyPlugin({
+      emitEventsAfterFetching: true
+    }),
+    new YtDlpPlugin()
+  ],
+  youtubeDL: false
 })
 
 client.login("Nzc4Njg0MjE4OTM4MDk3NzA0.GilwJZ.B-WW0_7VCd-FPbZNj1zkliVqnq1it9aMLyIKuE")
