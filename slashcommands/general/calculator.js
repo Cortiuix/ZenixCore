@@ -13,7 +13,7 @@ module.exports = {
          * @param {import{'discord.js'}.Interaction} message
          */   
 
-    async run(client, int){
+    async run(client, message){
 
     simplydjs.calculator(message, {
     embedColor: 'PURPLE', 
