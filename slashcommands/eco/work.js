@@ -35,3 +35,5 @@ module.exports = {
     else int.reply({ embeds: [embed] })
 
 }
+
+}
