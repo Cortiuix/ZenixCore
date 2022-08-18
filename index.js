@@ -25,6 +25,20 @@ fs.readdirSync('./slashcommands').forEach(async(categorys) => {
 
 require('./slashcommands')
 
+client.on('interacionCreate', (interacion) => {
+        if(interaction.isCommand()){
+        const cmd = client.slashcommand.get(interaction.commandName)
+        if(!cmd) return;
+
+        try{
+            await cmd.run(client, interaction)
+        } catch (e) {
+            console.error(e)
+            return interaction.reply({ content: 'failed interaction'})
+        }
+    }
+})
+
 client.on('ready', () => {
 
   const estados = [
