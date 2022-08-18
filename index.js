@@ -61,7 +61,10 @@ client.on('message', (message) => {
     const command = args.shift().toLowerCase();
 
     if(command === 'ping'){
-        message.channel.send("Pong!")
+        const embed = new Discord.MessageEmbed()
+        .setDescription(`${client.ws.ping}`)
+        .setColor("YELLOW")
+        message.channel.send({ embeds: [embed] })
     }
 
     let cmd = client.commands.find((c) => c.name === command || c.alias && c.alias.includes(command));
