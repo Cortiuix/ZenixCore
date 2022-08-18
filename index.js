@@ -13,6 +13,18 @@ const cs = new CurrencySystem;
 
 cs.setMongoURL("mongodb+srv://pansinbot:h4HyOEvkzvsGIV9M@cluster0.s6bey.mongodb.net/?retryWrites=true&w=majority");
 
+client.slashcommand = new Discord.Collection()
+
+fs.readdirSync('./slashcommands').forEach(async(categorys) => {
+  const commandFilesSlash = fs.readdirSync(`./slashcommands/${categorys}`).filter((archivo) => archivo.endsWith('js'))
+  for(const archivo of commandFilesSlash){
+    const command = require(`./slashcommands/${categorys}/${archivo}`)
+    client.slashcommand.set(command.data.name, command)
+  }
+})
+
+require('./slashcommands')
+
 client.on('ready', () => {
 
   const estados = [
