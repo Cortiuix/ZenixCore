@@ -88,7 +88,7 @@ client.on('message', (message) => {
 
     if(command === 'ping'){
         const embed = new Discord.MessageEmbed()
-        .setDescription(`${client.ws.ping}`)
+        .setDescription(`Pong 🏓 \n ${client.ws.ping}`)
         .setColor("YELLOW")
         message.channel.send({ embeds: [embed] })
     }
