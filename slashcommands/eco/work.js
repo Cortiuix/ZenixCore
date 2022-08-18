@@ -11,16 +11,16 @@ module.exports = {
     .setDescription('work to get money'),
 
         /**
-         * @param {import{'discord.js'}.Interaction} int
+         * @param {import{'discord.js'}.Message} int
          */   
 
     async run(client, int){
 
-        const user = int.author
+    const user = message.user
 
     let result = await cs.work({
-    user: int.author,
-    guild: int.guild,
+    user: message.user,
+    guild: message.guild,
     maxAmount: 500,
     replies: ['Programmer', 'Builder', 'Waiter', 'Busboy', 'Chief', 'Mechanic'],
     cooldown: 25 //25 seconds,
@@ -31,8 +31,8 @@ module.exports = {
       .setDescription(`You worked as a ${result.workType} and earned **$${result.amount}**.`)
       .setColor("PURPLE")
     
-    if (result.error) return int.reply(`You have already worked recently Try again in ${result.time}`);
-    else int.reply({ embeds: [embed] })
+    if (result.error) return message.reply(`You have already worked recently Try again in ${result.time}`);
+    else message.reply({ embeds: [embed] })
 
 }
 
