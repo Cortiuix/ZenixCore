@@ -11,9 +11,13 @@ require("./mongodb")
 const CurrencySystem = require("currency-system");
 const cs = new CurrencySystem;
 
+require('./slashcommands')
+
+client.slashcommand = new Discord.Collection()
+
 cs.setMongoURL("mongodb+srv://pansinbot:h4HyOEvkzvsGIV9M@cluster0.s6bey.mongodb.net/?retryWrites=true&w=majority");
 
-client.on('interacionCreate', async(interacion) => {
+client.on('interactionCreate', async(interacion) => {
         if(interaction.isCommand()){
         const cmd = client.slashcommand.get(interaction.commandName)
         if(!cmd) return;
@@ -27,8 +31,6 @@ client.on('interacionCreate', async(interacion) => {
     }
 })
 
-client.slashcommand = new Discord.Collection()
-
 fs.readdirSync('./slashcommands').forEach(async(categorys) => {
   const commandFilesSlash = fs.readdirSync(`./slashcommands/${categorys}`).filter((archivo) => archivo.endsWith('js'))
   for(const archivo of commandFilesSlash){
@@ -36,8 +38,6 @@ fs.readdirSync('./slashcommands').forEach(async(categorys) => {
     client.slashcommand.set(command.data.name, command)
   }
 })
-
-require('./slashcommands')
 
 client.on('ready', () => {
 
