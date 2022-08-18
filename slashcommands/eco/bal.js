@@ -23,7 +23,7 @@ module.exports = {
            });
 
     const embed = new Discord.MessageEmbed()
-    .setDescription(`**${user.user.tag}** \n **$${(result.wallet).toLocaleString()}** <a:coin_emoji:954433318504529961> wallet \n **$${(result.bank).toLocaleString()}** <a:coin_emoji:954433318504529961> bank`)
+    .setDescription(`**${user.tag}** \n **$${(result.wallet).toLocaleString()}** <a:coin_emoji:954433318504529961> wallet \n **$${(result.bank).toLocaleString()}** <a:coin_emoji:954433318504529961> bank`)
     .setThumbnail(user.user.displayAvatarURL({ size: 1024, dynamic: true}))
     .setColor("YELLOW")
     .setTimestamp()
