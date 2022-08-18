@@ -17,7 +17,7 @@ client.slashcommand = new Discord.Collection()
 
 cs.setMongoURL("mongodb+srv://pansinbot:h4HyOEvkzvsGIV9M@cluster0.s6bey.mongodb.net/?retryWrites=true&w=majority");
 
-client.on('interactionCreate', async(interacion) => {
+client.on('interactionCreate', async(interaction) => {
         if(interaction.isCommand()){
         const cmd = client.slashcommand.get(interaction.commandName)
         if(!cmd) return;
