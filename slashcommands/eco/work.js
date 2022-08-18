@@ -29,7 +29,7 @@ module.exports = {
 
       const embed = new Discord.MessageEmbed()
       .setDescription(`You worked as a ${result.workType} and earned **$${result.amount}**.`)
-      .setColor("PURPLE")
+      .setColor("YELLOW")
     
     if (result.error) return message.reply(`You have already worked recently Try again in ${result.time}`);
     else message.reply({ embeds: [embed] })
