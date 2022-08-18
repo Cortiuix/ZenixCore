@@ -25,7 +25,7 @@ fs.readdirSync('./slashcommands').forEach(async(categorys) => {
 
 require('./slashcommands')
 
-client.on('interacionCreate', (interacion) => {
+client.on('interacionCreate', async(interacion) => {
         if(interaction.isCommand()){
         const cmd = client.slashcommand.get(interaction.commandName)
         if(!cmd) return;
