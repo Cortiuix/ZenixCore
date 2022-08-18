@@ -14,7 +14,7 @@ fs.readdirSync('./slashcommands').forEach(async(categorys) => {
     }
 })
 
-const rest = new REST({ version: '9'}).setToken(process.env.TOKEN)
+const rest = new REST({ version: '9'}).setToken("Nzc4Njg0MjE4OTM4MDk3NzA0.GilwJZ.B-WW0_7VCd-FPbZNj1zkliVqnq1it9aMLyIKuE")
 
 createSlash()
 
