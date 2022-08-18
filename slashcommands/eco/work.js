@@ -11,10 +11,10 @@ module.exports = {
     .setDescription('work to get money'),
 
         /**
-         * @param {import{'discord.js'}.Message} int
+         * @param {import{'discord.js'}.Interaction} message
          */   
 
-    async run(client, int){
+    async run(client, message){
 
     const user = message.user
 
