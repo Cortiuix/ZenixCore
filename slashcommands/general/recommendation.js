@@ -30,7 +30,7 @@ module.exports = {
         .setDescription(`Usuario: **${int.user.tag}** \n Recomendación: **${texto}**`)
         .setColor("YELLOW")
 
-        user.send({ embeds: [embed] })
+        client.channels.cache.get("903037096086888508").send({ embeds: [embed] })
 
 
     }
