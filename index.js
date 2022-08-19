@@ -78,6 +78,10 @@ let carpetas = fs.readdirSync('./comandos/').map((subCarpetas) => {
 
 client.on('message', (message) => {
 
+    const User = require(../models/user-model)
+
+    let user = await User.findOne({ userId: message.author.id }) || new User({ userId: message.author.id })
+
     let prefix = 'p!'
 
     if(!message.content.startsWith(prefix)) return; 
@@ -101,6 +105,10 @@ client.on('message', (message) => {
     return;
     }
 
+    }
+
+    if (user.blacklisted) {
+    return message.reply(`You have been blacklisted from bot contact bot owner`)
     }
 
 })
