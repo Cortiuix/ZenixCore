@@ -77,7 +77,7 @@ module.exports = {
       .setDescription(`An error occurred while executing the warn.js command. \n Error: I can't send messages to this user privately \n Server: **${message.guild.name}** \n user: **${user.tag}**`)
       .setColor("RED")
 
-      client.channels.cache.get("937191383708618762").send({ embeds: [embed3] })
+      client.channels.cache.get("1010321496763285566").send({ embeds: [embed3] })
     })
 
     }
