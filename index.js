@@ -87,6 +87,10 @@ client.on('message', async(message) => {
     if(!message.content.startsWith(prefix)) return; 
     if(message.author.bot) return;
 
+    if (user.blacklisted) {
+    return message.reply(`You have been blacklisted from bot contact bot owner`)
+    }
+
     const args = message.content.slice(prefix.length).trim().split(/ +/g);
     const command = args.shift().toLowerCase();
 
@@ -105,10 +109,6 @@ client.on('message', async(message) => {
     return;
     }
 
-    }
-
-    if (user.blacklisted) {
-    return message.reply(`You have been blacklisted from bot contact bot owner`)
     }
 
 })
