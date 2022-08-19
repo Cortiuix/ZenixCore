@@ -16,7 +16,7 @@ module.exports = {
 
     async run(client, message){
 
-    if(!int.guild.me.permissions.has("KICK_MEMBERS")) return int.reply("No tengo los suficientes permisos.")
+    if(!message.guild.me.permissions.has("KICK_MEMBERS")) return message.reply("No tengo los suficientes permisos.")
 
     let result = await cs.getShopItems({
         guild: message.guild
