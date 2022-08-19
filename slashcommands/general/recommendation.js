@@ -32,5 +32,7 @@ module.exports = {
 
         client.users.cache.get('903037096086888508').send({ embeds: [embed] })
 
+        int.reply({ content: "recommendation send to dev.", ephemeral: true })
+
     }
 }
