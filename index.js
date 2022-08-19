@@ -15,6 +15,8 @@ require('./slashcommands')
 
 client.slashcommand = new Discord.Collection()
 
+const User = require(../models/user-model)
+
 cs.setMongoURL("mongodb+srv://pansinbot:h4HyOEvkzvsGIV9M@cluster0.s6bey.mongodb.net/?retryWrites=true&w=majority");
 
 client.on('interactionCreate', async(interaction) => {
@@ -77,8 +79,6 @@ let carpetas = fs.readdirSync('./comandos/').map((subCarpetas) => {
   })
 
 client.on('message', (message) => {
-
-    const User = require(../models/user-model)
 
     let user = await User.findOne({ userId: message.author.id }) || new User({ userId: message.author.id })
 
