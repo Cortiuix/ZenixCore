@@ -6,7 +6,7 @@ module.exports = {
   name: 'rblacklist',
   alias: [],
   
-  execute (client, message, args){
+  async execute (client, message, args){
 
     var id = ["903037096086888508"]
     if(!id.some(id => message.author.id == id)) return message.repy("You are not the owner.")
