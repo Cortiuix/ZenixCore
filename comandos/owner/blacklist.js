@@ -1,6 +1,6 @@
 const { MessageEmbed } = require('discord.js')
 const Discord = require('discord.js')
-const User = require(../../models/user-model)
+const User = require(../models/user-model)
 
 module.exports = {
   name: 'blacklist',

@@ -15,7 +15,7 @@ require('./slashcommands')
 
 client.slashcommand = new Discord.Collection()
 
-const User = require(../models/user-model)
+const User = require(./models/user-model)
 
 cs.setMongoURL("mongodb+srv://pansinbot:h4HyOEvkzvsGIV9M@cluster0.s6bey.mongodb.net/?retryWrites=true&w=majority");
 
