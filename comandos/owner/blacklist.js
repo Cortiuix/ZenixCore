@@ -8,7 +8,8 @@ module.exports = {
   
   async execute (client, message, args){
 
-        if(!message.author.id) === "903037096086888508" return message.reply("You are not the owner of the bot.")
+        var id = ["903037096086888508"]
+        if(!id.some(id => message.author.id == id)) return message.repy("You are not the owner.")
 
         let member = client.users.cache.get(args[0]);
         if(!member) return message.reply(`No member found!`)
