@@ -21,7 +21,7 @@ module.exports = {
 
     async run(client, int){
 
-        const user = "903037096086888508"
+        let user 
 
         const texto = int.options.getString("text")
 
@@ -30,8 +30,7 @@ module.exports = {
         .setDescription(`Usuario: **${int.user.tag}** \n Recomendación: **${texto}**`)
         .setColor("YELLOW")
 
-        client.channels.cache.get("903037096086888508").send({ embeds: [embed] })
-
+        client.users.cache.get('903037096086888508').send({ embeds: [embed] })
 
     }
 }
