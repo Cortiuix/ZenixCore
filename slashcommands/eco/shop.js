@@ -1,12 +1,22 @@
+const { SlashCommandBuilder} = require('@discordjs/builders')
 const Discord = require('discord.js')
 const CurrencySystem = require("currency-system");
 const cs = new CurrencySystem;
 
 module.exports = {
-  name: 'shop',
-  alias: [],
 
-  async execute (client, message, args){
+    data: new SlashCommandBuilder()
+
+    .setName('shop')
+    .setDescription('see the items of the shop'),
+
+        /**
+         * @param {import{'discord.js'}.Interaction} message
+         */   
+
+    async run(client, message){
+
+    if(!int.guild.me.permissions.has("KICK_MEMBERS")) return int.reply("No tengo los suficientes permisos.")
 
     let result = await cs.getShopItems({
         guild: message.guild
@@ -21,6 +31,7 @@ module.exports = {
     message.reply({
         embeds: [embed]
     });
-    
-  }
+
+}
+
 }
