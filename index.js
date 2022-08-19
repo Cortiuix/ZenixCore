@@ -78,7 +78,7 @@ let carpetas = fs.readdirSync('./comandos/').map((subCarpetas) => {
     })
   })
 
-client.on('message', (message) => {
+client.on('message', async(message) => {
 
     let user = await User.findOne({ userId: message.author.id }) || new User({ userId: message.author.id })
 

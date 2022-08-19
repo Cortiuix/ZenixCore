@@ -6,7 +6,7 @@ module.exports = {
   name: 'blacklist',
   alias: [],
   
-  execute (client, message, args){
+  async execute (client, message, args){
 
         if(!message.author.id) === "903037096086888508" return message.reply("You are not the owner of the bot.")
 
