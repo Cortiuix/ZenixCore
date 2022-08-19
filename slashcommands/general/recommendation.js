@@ -21,7 +21,7 @@ module.exports = {
 
     async run(client, int){
 
-        const user = ["903037096086888508"]
+        const user = "903037096086888508"
 
         const texto = int.options.getString("text")
 
