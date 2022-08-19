@@ -27,7 +27,7 @@ module.exports = {
 
         const embed = new Discord.MessageEmbed()
         .setTitle("Nueva Recomendación")
-        .setDescription(`Usuario: **${int.user.tag}** \n Recomendación: `${texto}``)
+        .setDescription(`Usuario: **${int.user.tag}** \n Recomendación: **${texto}**`)
         .setColor("YELLOW")
 
         user.send({ embeds: [embed] })
