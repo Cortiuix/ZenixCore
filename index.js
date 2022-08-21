@@ -3,7 +3,7 @@ const Discord = require("discord.js")
 const client = new Discord.Client({ intents: [32511] })
 const DisTube = require("distube").default
 
-const api = require("./config.json")
+const api = require("../config.json")
 
 const express = require("express")
 const app = express()
