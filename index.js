@@ -130,7 +130,7 @@ new SpotifyPlugin({
   emitEventsAfterFetching: false,
   api: {
     clientId: api.spotify,
-    clientSecret: api.spotify-secret,
+    clientSecret: api.spotifysecret,
   },
 });
 
