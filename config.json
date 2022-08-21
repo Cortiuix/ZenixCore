@@ -1,0 +1,7 @@
+{
+	"mongodb":"mongodb+srv://pansinbot:h4HyOEvkzvsGIV9M@cluster0.s6bey.mongodb.net/?retryWrites=true&w=majority",
+	"prefix":"p!",
+	"token":"Nzc4Njg0MjE4OTM4MDk3NzA0.GilwJZ.B-WW0_7VCd-FPbZNj1zkliVqnq1it9aMLyIKuE",
+	"spotify":"bf0e91b32e594e81b0cd07b40a3764d5",
+	"spotify-secret":"d3bb75b47a344d09920aee259d781bcd",
+}

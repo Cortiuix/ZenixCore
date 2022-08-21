@@ -3,6 +3,11 @@ const Discord = require("discord.js")
 const client = new Discord.Client({ intents: [32511] })
 const DisTube = require("distube").default
 
+const api = require("./config.json")
+
+const express = require("express")
+const app = express()
+
 const fs = require('fs');
 let { readdirSync } = require('fs');
 
@@ -99,6 +104,11 @@ client.on('message', async(message) => {
         .setDescription(`Pong 🏓 \n ${client.ws.ping}`)
         .setColor("YELLOW")
         message.channel.send({ embeds: [embed] })
+
+    }
+
+    if(command === 'preba'){
+        message.reply(api.prefix)
     }
 
     let cmd = client.commands.find((c) => c.name === command || c.alias && c.alias.includes(command));
