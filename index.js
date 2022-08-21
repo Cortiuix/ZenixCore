@@ -1,7 +1,7 @@
 const Discord = require("discord.js")
 
 const client = new Discord.Client({ intents: [32511] })
-const DisTube = require("distube").default
+const { DisTube } = require("distube")
 
 const api = require("./config.json")
 
@@ -143,7 +143,6 @@ client.distube = new DisTube(client, {
     new SpotifyPlugin({
       emitEventsAfterFetching: true
     }),
-    new YtDlpPlugin(),
     new YtDlpPlugin()
   ]
 })
