@@ -1,6 +1,7 @@
 const mongoose = require("mongoose")
+const mdb = require("../config.json")
 
-mongoose.connect("mongodb+srv://pansinbot:h4HyOEvkzvsGIV9M@cluster0.s6bey.mongodb.net/?retryWrites=true&w=majority", {
+mongoose.connect(mdb.mongodb, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 }) 

@@ -22,7 +22,7 @@ client.slashcommand = new Discord.Collection()
 
 const User = require("./models/user-model")
 
-cs.setMongoURL("mongodb+srv://pansinbot:h4HyOEvkzvsGIV9M@cluster0.s6bey.mongodb.net/?retryWrites=true&w=majority");
+cs.setMongoURL(mongodb);
 
 client.on('interactionCreate', async(interaction) => {
         if(interaction.isCommand()){
@@ -129,8 +129,8 @@ new SpotifyPlugin({
   parallel: true,
   emitEventsAfterFetching: false,
   api: {
-    clientId: "bf0e91b32e594e81b0cd07b40a3764d5",
-    clientSecret: "d3bb75b47a344d09920aee259d781bcd",
+    clientId: api.spotify,
+    clientSecret: api.spotify-secret,
   },
 });
 
@@ -156,4 +156,4 @@ for(const file of fs.readdirSync('./distube/')){
   }
 }
 
-client.login("Nzc4Njg0MjE4OTM4MDk3NzA0.GilwJZ.B-WW0_7VCd-FPbZNj1zkliVqnq1it9aMLyIKuE")
+client.login(api.token)
