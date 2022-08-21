@@ -1,5 +1,5 @@
 const mongoose = require("mongoose")
-const mdb = require("../config.json")
+const mdb = require("./config.json")
 
 mongoose.connect(mdb.mongodb, {
   useNewUrlParser: true,
