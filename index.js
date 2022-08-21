@@ -22,7 +22,7 @@ client.slashcommand = new Discord.Collection()
 
 const User = require("./models/user-model")
 
-cs.setMongoURL(mongodb);
+cs.setMongoURL(api.mongodb);
 
 client.on('interactionCreate', async(interaction) => {
         if(interaction.isCommand()){
