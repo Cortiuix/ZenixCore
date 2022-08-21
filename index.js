@@ -143,9 +143,9 @@ client.distube = new DisTube(client, {
     new SpotifyPlugin({
       emitEventsAfterFetching: true
     }),
+    new YtDlpPlugin(),
     new YtDlpPlugin()
-  ],
-  youtubeDL: false
+  ]
 })
 
 for(const file of fs.readdirSync('./distube/')){
