@@ -54,7 +54,7 @@ client.on('ready', () => {
         type: 'WATCHING'
     },
     {
-        name: 'Pansin beta',
+        name: 'Zenix v1.0.2',
         type: 'PLAYING'
     }
 ]
