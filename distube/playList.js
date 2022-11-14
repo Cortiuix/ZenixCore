@@ -4,7 +4,7 @@ module.exports = (client, queue, playList) => {
 
   const embed = new Discord.MessageEmbed()
   .setDescription(`playList Added: [${playList.name}](${playList.url})`, true)
-  .setColor('YELLOW')
+  .setColor('#3e75a5')
 
   queue.textChannel.send({ embeds: [embed] })
 

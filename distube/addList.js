@@ -4,7 +4,7 @@ module.exports = (client, playList) => {
 
   const embed = new Discord.MessageEmbed()
   .setDescription(`Playlist added to the track: **${playList.songs.length}**`)
-  .setColor('YELLOW')
+  .setColor('#3e75a5')
 
   playList.textChannel.send({ embeds: [embed] })
 
