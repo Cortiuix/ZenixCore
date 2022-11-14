@@ -87,7 +87,7 @@ client.on('message', async(message) => {
 
     let user = await User.findOne({ userId: message.author.id }) || new User({ userId: message.author.id })
 
-    let prefix = 'p!'
+    let prefix = 'z!'
 
     if(!message.content.startsWith(prefix)) return; 
     if(message.author.bot) return;
