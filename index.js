@@ -154,5 +154,5 @@ for(const file of fs.readdirSync('./distube/')){
     client.distube.on(fileName, fileContents.bind(null, client))
   }
 }
-
+ 
 client.login(api.token)
