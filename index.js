@@ -71,7 +71,7 @@ setInterval(() => {
     presence()
 }, 10000)
 
-    console.log("Tamo activo")
+    console.log("ZenixCore is ready")
 })
 
 
