@@ -154,5 +154,18 @@ for(const file of fs.readdirSync('./distube/')){
     client.distube.on(fileName, fileContents.bind(null, client))
   }
 }
+
+const express = require('express')
+const app = express()
+
+app.get('/invite', (req, res) => {
+  res.redirect("https://discord.com/api/oauth2/authorize?client_id=778684218938097704&permissions=8&scope=bot%20applications.commands")
+})
+
+const port = 3000;
+app.get("/", function(request, response) {
+  response.sendFile(__dirname + '/index.html');
+});
+app.listen(port, () => console.log(`Cargando Pagina Web`));
  
 client.login(api.token)
